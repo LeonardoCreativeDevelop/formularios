@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: seagreen;
+    font-size: 18px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column; /*El eje principal es vertical.*/
+    align-items: center; /*Centramos en el eje secundario que en este caso es horizontal.*/
+    background-color: lightgreen;
+    background-image: url('../img/skulls.svg');
+}
+
+form{
+    margin: 40px 0 -40px;
+    width: 70%;
+    padding: 10px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    z-index: 1;
+}
+
+footer{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+h1{
+    font-size: 26px;
+    text-align: center;        
+}
+
+.fila{
+    display: flex;
+}
+
+.col50{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.col100{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.col33{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.col66{
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.col100radio{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    color: darkturquoise;
+    /* counter-reset: cerveza; */
+}
+
+.col100check{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    color: darkturquoise;
+    /* counter-reset: cerveza; */
+}
+
+label{
+    padding: 5px;
+    opacity: 0;
+    transition: 2s;
+}
+
+input{
+    font-size: 18px;
+    padding: 5px;
+    border: solid 2px seagreen;
+    border-radius: 15px;
+}
+
+input:focus{
+    background-color: seagreen;
+    color: white;
+    outline: none;
+}
+
+input::-webkit-input-placeholder{
+    color: seagreen;
+}
+
+#nombre::-webkit-input-placeholder{
+    background-image: url('../img/user.png');
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+#apellidos::-webkit-input-placeholder{
+    background-image: url('../img/user.png');
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+#direccion::-webkit-input-placeholder{
+    background-image: url('../img/ubicación.png');
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+#cp::-webkit-input-placeholder{
+    background-image: url('../img/postal.png');
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+#localidad::-webkit-input-placeholder{
+    background-image: url('../img/localidad.png');
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+#telefono::-webkit-input-placeholder{
+    background-image: url('../img/phone.png');
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+#mail::-webkit-input-placeholder{
+    background-image: url('../img/mail.png');
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+select{
+    -webkit-appearance: none;
+    color: seagreen;
+    border: solid 2px seagreen;
+    border-radius: 15px;
+    font-size: 20px;
+    background-image: url('../img/down.png');
+    background-repeat: no-repeat;
+    background-position: 95%;
+}
+
+select:focus{
+    background-color: seagreen;
+    color: white;
+    outline: none;
+    background-image: url('../img/downw.png');
+    background-repeat: no-repeat;
+    background-position: 95%;
+}
+
+.radio{
+    opacity: 1;
+}
+
+input[type="radio"]{
+display: none;
+}
+
+input[type="radio"]+.radio:before{
+    content: url('../img/circle_outline.svg');
+    position: relative;
+    top: 5px;
+    padding-right: 10px;
+}
+input[type="radio"]:checked + .radio:before{
+    content: url('../img/tick_inside_circle.svg');
+}
+
+.check{
+    opacity: 1;
+}
+
+input[type="checkbox"]{
+    display: none;
+    }
+    
+input[type="checkbox"]+.check:before{
+    content: url('../img/circle_outline.svg');
+    position: relative;
+    top: 5px;
+    padding-right: 10px;
+}
+input[type="checkbox"]:checked + .check:before{
+    content: url('../img/tick_inside_circle.svg');
+}
+
+input[type="submit"]{
+    opacity: 0;
+    background-color: seagreen;
+    color: white;
+    font-size: 20px;
+    width: 30%;
+    transition: 1s;
+}
+
+input[type="submit"]:hover{
+    background-color: aqua;
+    color: darkgreen;
+    border: 2px solid seagreen;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+a{
+    color: darkgreen;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(0, 32, 139);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/*Just for fun (porque los botones deshabilitan co disabled y una lógica)*/
+
+#condiciones:checked ~ input[type="submit"]{
+    opacity: 1;
+}
+
+@media (max-width:740px){
+    form{
+        width: 90%;
+    }
+}
+
+@media (max-width:620px){
+    .fila{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col33, .col50, .col66{
+        width: 100%;
+    }
+
+    .col100check{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="submit"]{
+        margin: 20px;
+        width: 80%;
+    }
+
+}
